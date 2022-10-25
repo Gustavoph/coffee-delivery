@@ -1,35 +1,16 @@
-import { ShoppingCart, MapPin, Package, Timer, Coffee } from 'phosphor-react'
-
-import logo from '../../assets/logo.svg'
-import coffee from '../../assets/coffee.svg'
-import expresso from '../../assets/expresso.svg'
+import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 import { CoffeeCard } from '../../components/CoffeeCard'
+
+import { Header } from '../../components/Header'
+import { coffees } from '../../mock/coffees'
+import coffee from '../../assets/coffee.svg'
 
 export function Home() {
   return (
     <div className="w-full h-full">
-      <div className="w-full h-[104px] mx-auto max-w-[1120px]">
-        <header className="w-full h-full flex items-center justify-between">
-          <img src={logo} alt="" />
+      <Header />
 
-          <nav className="flex gap-3">
-            <div className="flex items-center justify-center gap-1 bg-purple-light rounded-md px-2">
-              <MapPin weight="fill" size={22} className="text-purple-dark" />
-              <span className="text-text-s text-purple-dark">Maringá, PR</span>
-            </div>
-
-            <button className="flex items-center justify-center w-10 h-10 bg-yellow-light rounded-md">
-              <ShoppingCart
-                weight="fill"
-                size={22}
-                className="text-yellow-dark"
-              />
-            </button>
-          </nav>
-        </header>
-      </div>
-
-      <main className="w-full h-[544px] bg-coffee-cover bg-cover bg-no-repeat bg-center">
+      <main className="w-full mt-[104px] h-[544px] bg-coffee-cover bg-cover bg-no-repeat bg-center">
         <div className="mx-auto max-w-[1120px]">
           <section className="w-full h-[544px] pt-24 pb-28 flex items-center justify-between gap-14">
             <section className="space-y-16">
@@ -95,15 +76,15 @@ export function Home() {
           <section className="pb-28 space-y-14">
             <h1 className="text-base-subtitle text-title-l">Nossos cafés</h1>
 
-            <div className="grid grid-cols-4 gap-y-10 gap-x-8">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((coffee) => (
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-10 gap-x-8">
+              {coffees.map((coffee) => (
                 <CoffeeCard
-                  key={coffee}
-                  value={9.99}
-                  url={expresso}
-                  tags={['TRADICIONAL']}
-                  name="Expresso Tradicional"
-                  description="O tradicional café feito com água quente e grãos moídos"
+                  key={coffee.id}
+                  tags={coffee.tags}
+                  name={coffee.name}
+                  price={coffee.price}
+                  photo={coffee.photo}
+                  description={coffee.description}
                 />
               ))}
             </div>

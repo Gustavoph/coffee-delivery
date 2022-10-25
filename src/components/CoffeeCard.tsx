@@ -1,27 +1,33 @@
+import cx from 'classnames'
 import { ShoppingCart, Minus, Plus } from 'phosphor-react'
 import { priceFormatter } from '../utils/formater'
 
 interface CoffeeCardProps {
-  url: string
   name: string
-  value: number
+  price: number
+  photo: string
   tags: string[]
   description: string
 }
 
 export function CoffeeCard({
   tags,
-  url,
   name,
-  value,
+  photo,
+  price,
   description,
 }: CoffeeCardProps) {
   return (
-    <div className="w-64 h-72 bg-base-card card-radius px-6 flex flex-col justify-start items-center space-y-4">
-      <img src={url} className="-mt-5" alt="imagem café expresso tradicional" />
-
-      <header className="bg-yellow-light rounded-[100px] px-2 py-1">
-        <p className="text-tag text-yellow-dark font-bold">{tags[0]}</p>
+    <div className="w-64 min-h-72 pb-5 bg-base-card card-radius px-6 flex flex-col justify-start items-center space-y-4">
+      <img src={`/coffees/${photo}`} className="-mt-5" alt={description} />
+      <header className="flex gap-1 flex-wrap">
+        {tags?.map((tag) => (
+          <p key={tag} className="bg-yellow-light rounded-[100px] px-2 py-1 ">
+            <span className="block text-tag text-yellow-dark font-bold">
+              {tag}
+            </span>
+          </p>
+        ))}
       </header>
 
       <section className="text-center">
@@ -31,7 +37,7 @@ export function CoffeeCard({
 
       <footer className="flex w-full items-center justify-between">
         <h3 className="text-base-text text-title-m font-bold">
-          <span className="text-text-s">R$</span> {priceFormatter.format(value)}
+          <span className="text-text-s">R$</span> {priceFormatter.format(price)}
         </h3>
 
         <div className="flex gap-2">
@@ -45,7 +51,12 @@ export function CoffeeCard({
             </button>
           </div>
 
-          <button className="flex items-center justify-center w-10 h-10 bg-purple-dark rounded-md">
+          <button
+            className={cx(
+              'hover:bg-purple transition duration-300',
+              'flex items-center justify-center w-10 h-10 bg-purple-dark rounded-md',
+            )}
+          >
             <ShoppingCart weight="fill" size={22} className="text-white" />
           </button>
         </div>
