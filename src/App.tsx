@@ -1,7 +1,5 @@
 import { Home } from './pages/Home'
-import { globalStyles } from './styles/global'
-
-globalStyles()
+import './styles/global.css'
 
 export function App() {
   return <Home />

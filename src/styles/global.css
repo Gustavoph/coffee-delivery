@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border antialiased
+  }
+
+  h1, h2 ,h3, h4, h5, h6 {
+    @apply font-cursive
+  }
+
+  p, span {
+    @apply font-sans
+  }
+
+  button {
+    @apply cursor-pointer
+  }
+
+  .card-radius {
+    @apply rounded-tr-[36px] rounded-tl-md rounded-bl-[36px] rounded-br-md
+  }
+}
