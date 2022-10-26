@@ -1,6 +1,5 @@
-import cx from 'classnames'
 import { ShoppingCart, Minus, Plus } from 'phosphor-react'
-import { priceFormatter } from '../utils/formater'
+import { priceFormatter } from '@/utils/formater'
 
 interface CoffeeCardProps {
   name: string
@@ -20,6 +19,7 @@ export function CoffeeCard({
   return (
     <div className="w-64 min-h-72 pb-5 bg-base-card card-radius px-6 flex flex-col justify-start items-center space-y-4">
       <img src={`/coffees/${photo}`} className="-mt-5" alt={description} />
+
       <header className="flex gap-1 flex-wrap">
         {tags?.map((tag) => (
           <p key={tag} className="bg-yellow-light rounded-[100px] px-2 py-1 ">
@@ -51,12 +51,7 @@ export function CoffeeCard({
             </button>
           </div>
 
-          <button
-            className={cx(
-              'hover:bg-purple transition duration-300',
-              'flex items-center justify-center w-10 h-10 bg-purple-dark rounded-md',
-            )}
-          >
+          <button className="hover:bg-purple transition duration-300 flex items-center justify-center w-10 h-10 bg-purple-dark rounded-md">
             <ShoppingCart weight="fill" size={22} className="text-white" />
           </button>
         </div>

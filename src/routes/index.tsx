@@ -1,12 +1,16 @@
 import { Routes, Route } from 'react-router-dom'
-// import { DefaultLayout } from './layouts/DefaultLayout'
-// import { History } from './pages/History'
-import { Home } from '../pages/Home'
+
+import { Home } from '@/pages/Home'
+import { Checkout } from '@/pages/Checkout'
+import { DefaultLayout } from './layouts/Default'
 
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<DefaultLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Route>
     </Routes>
   )
 }
