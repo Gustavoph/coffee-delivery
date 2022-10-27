@@ -5,7 +5,6 @@ import {
   Bank,
   MapPinLine,
 } from 'phosphor-react'
-
 import * as S from './styles'
 
 export function Checkout() {
