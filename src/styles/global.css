@@ -22,4 +22,14 @@
   .card-radius {
     @apply rounded-tr-[36px] rounded-tl-md rounded-bl-[36px] rounded-br-md
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance:textfield;
+  }
 }

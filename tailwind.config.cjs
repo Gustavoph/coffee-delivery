@@ -6,6 +6,7 @@ module.exports = {
       cursive: ["'Baloo 2'", 'cursive'],
       sans: ['Roboto', 'sans-serif'],
     },
+
     fontSize: {
       tag: 10,
       'title-xl': 48,
@@ -42,6 +43,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'coffee-cover': "url('./src/assets/background.svg')",
+      },
+      borderColor: {
+        transparent: 'transparent',
       },
     },
   },

@@ -1,11 +1,15 @@
+import { TextInput } from '@/components'
+
 import {
   CurrencyDollarSimple,
-  CreditCard,
   Money,
   Bank,
   MapPinLine,
+  Minus,
+  Plus,
+  Trash,
 } from 'phosphor-react'
-import * as S from './styles'
+import { PaymentCard } from './components/PaymentCard'
 
 export function Checkout() {
   return (
@@ -15,8 +19,8 @@ export function Checkout() {
           Complete seu pedido
         </h1>
 
-        <div className="flex flex-col">
-          <div className="flex flex-col gap-y-8 p-10 bg-base-card rounded space-y-8">
+        <section className="flex flex-col space-y-3">
+          <section className="flex flex-col gap-y-8 p-10 bg-base-card rounded">
             <div className="flex items-start gap-2">
               <MapPinLine size={22} className="text-yellow-dark" />
               <div>
@@ -29,56 +33,113 @@ export function Checkout() {
               </div>
             </div>
 
-            <form className="grid">
-              <S.Input type="text" placeholder="CEP" />
-              <input type="text" placeholder="Rua" />
-              <input type="text" placeholder="Número" />
-              <input type="text" placeholder="Complemento" />
-              <input type="text" placeholder="Bairro" />
-              <input type="text" placeholder="Cidade" />
-              <input type="text" placeholder="UF" />
-            </form>
-          </div>
+            <form className="grid grid-cols-6 gap-x-3 gap-y-4">
+              <TextInput placeholder="CEP" type="number" cls="col-span-2" />
 
-          <div>
-            <header>
-              <h2>
-                <span>
-                  <CurrencyDollarSimple />
+              <TextInput placeholder="Rua" type="text" cls="col-span-6" />
+
+              <TextInput placeholder="Número" type="text" cls="col-span-2" />
+
+              <div className="col-span-4 relative">
+                <TextInput type="text" placeholder="Complemento" cls="pr-16" />
+                <span className="text-[12px] text-base-label italic absolute right-3 bottom-4">
+                  Opcional
                 </span>
-                Pagamento
-              </h2>
-              <p>
-                O pagamento é feito na entrega. Escolha a forma que deseja pagar
-              </p>
-            </header>
-
-            <div>
-              <div>
-                <CreditCard />
-                <span>Cartão de crédito</span>
               </div>
 
-              <div>
-                <Bank />
-                <span>Cartão de débito</span>
-              </div>
+              <TextInput type="text" cls="col-span-2" placeholder="Bairro" />
 
+              <TextInput type="text" cls="col-span-3" placeholder="Cidade" />
+
+              <TextInput type="text" cls="col-span-1" placeholder="UF" />
+            </form>
+          </section>
+
+          <section className="bg-base-card p-10 rounded-md ">
+            <div className="flex items-start gap-2 mb-8">
+              <CurrencyDollarSimple size={22} className="text-purple" />
               <div>
-                <Money />
-                <span>Dinheiro</span>
+                <p className="text-base-subtitle text-text-m">Pagamento</p>
+                <p className="text-base-text text-text-s">
+                  O pagamento é feito na entrega. Escolha a forma que deseja
+                  pagar
+                </p>
               </div>
             </div>
-          </div>
-        </div>
+
+            <div className="flex gap-x-3">
+              <PaymentCard
+                type="Cartão de crédito"
+                icon={<Money size={16} />}
+              />
+              <PaymentCard type="Cartão de débito" icon={<Bank size={16} />} />
+              <PaymentCard type="Dinheiro" icon={<Money size={16} />} />
+            </div>
+          </section>
+        </section>
       </section>
 
-      <section className="bg-blue-100">
+      <section>
         <h1 className="text-base-subtitle text-title-xs mb-[15px]">
           Cafés selecionados
         </h1>
 
-        <div className="flex flex-col gap-y-8 p-10 bg-base-card rounded space-y-8 w-full min-w-[448px]"></div>
+        <div className="flex flex-col p-10 bg-base-card rounded w-full min-w-[448px] rounded-tr-[44px] rounded-bl-[44px]">
+          <div className="flex px-1 py-2">
+            <img
+              alt=""
+              src="/coffees/americano.svg"
+              className="w-16 h-16 mr-5"
+            />
+
+            <div className="mr-10 space-y-2">
+              <p>Expresso Tradicional</p>
+              <div className="flex gap-x-2">
+                <div className="flex h-[32px] items-center rounded px-2 py-3 bg-base-button gap-2">
+                  <button>
+                    <Minus size={14} className="text-purple" />
+                  </button>
+                  <span className="text-text-m text-base-title">1</span>
+                  <button>
+                    <Plus size={14} className="text-purple " />
+                  </button>
+                </div>
+
+                <button className="flex h-[32px] gap-x-1 px-2 items-center bg-base-button rounded">
+                  <Trash size={14} className="text-purple" />
+                  <span className="text-[12px] text-base-text">Remover</span>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-base-text text-text-m font-bold">R$ 9,90</p>
+            </div>
+          </div>
+
+          <hr className="text-base-button mt-6" />
+
+          <div className="flex flex-col gap-y-3 my-6">
+            <p className="text-base-text flex text-text-s">
+              <span className="block flex-1">Total de itens</span>
+              <span className="block text-text-m">R$ 29,70</span>
+            </p>
+            <p className="text-base-text flex text-text-s">
+              <span className="block flex-1">Entrega</span>
+              <span className="block text-text-m">R$ 3,30</span>
+            </p>
+            <p className="text-base-subtitle flex text-text-l font-bold">
+              <span className="block flex-1">Total</span>
+              <span className="block text-text-m">R$ 33,00</span>
+            </p>
+          </div>
+
+          <button className="bg-yellow rounded-md py-4 px-2 flex justify-center transition hover:bg-yellow-dark">
+            <span className="font-bold text-white text-text-m uppercase">
+              Confirmar pedido
+            </span>
+          </button>
+        </div>
       </section>
     </main>
   )
