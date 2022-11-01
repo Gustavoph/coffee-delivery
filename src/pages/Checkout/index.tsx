@@ -1,5 +1,4 @@
 import { TextInput } from '@/components'
-
 import {
   CurrencyDollarSimple,
   Money,
@@ -9,9 +8,16 @@ import {
   Plus,
   Trash,
 } from 'phosphor-react'
+import { useNavigate } from 'react-router-dom'
 import { PaymentCard } from './components/PaymentCard'
 
 export function Checkout() {
+  const navigate = useNavigate()
+
+  function handleComplete() {
+    navigate('/success')
+  }
+
   return (
     <main className="mt-[104px] pt-10 h-full mx-auto max-w-[1120px] flex gap-8">
       <section className="bg-red-100 w-full max-w-[640px]">
@@ -133,8 +139,10 @@ export function Checkout() {
               <span className="block text-text-m">R$ 33,00</span>
             </p>
           </div>
-
-          <button className="bg-yellow rounded-md py-4 px-2 flex justify-center transition hover:bg-yellow-dark">
+          <button
+            onClick={handleComplete}
+            className="bg-yellow rounded-md py-4 px-2 flex justify-center transition hover:bg-yellow-dark"
+          >
             <span className="font-bold text-white text-text-m uppercase">
               Confirmar pedido
             </span>
