@@ -3,9 +3,10 @@ import { CurrencyDollarSimple, Money, Bank, MapPinLine } from 'phosphor-react'
 import { useNavigate } from 'react-router-dom'
 import { CoffeeCard } from './components/CoffeeCard'
 import { PaymentCard } from './components/PaymentCard'
-import { coffees } from '@/data/coffees'
+import { useCart } from '@/context/cartContext'
 
 export function Checkout() {
+  const { coffees } = useCart()
   const navigate = useNavigate()
 
   function handleComplete() {
@@ -85,12 +86,9 @@ export function Checkout() {
         </h1>
 
         <div className="flex flex-col p-10 bg-base-card rounded w-full min-w-[448px] rounded-tr-[44px] rounded-bl-[44px]">
-          <CoffeeCard
-            id={coffees[0].id}
-            name={coffees[0].name}
-            photo={coffees[0].photo}
-            price={coffees[0].price}
-          />
+          {coffees.map((coffee) => (
+            <CoffeeCard key={coffee.id} coffee={coffee} />
+          ))}
 
           <div className="flex flex-col gap-y-3 mb-6">
             <p className="text-base-text flex text-text-s">

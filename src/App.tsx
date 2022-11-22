@@ -1,15 +1,15 @@
 import { BrowserRouter } from 'react-router-dom'
-import { CoffeeProvider } from './context/coffee'
+import { CartProvider } from './context/cartContext'
 
 import { Router } from './routes'
 import './styles/global.css'
 
 export function App() {
   return (
-    <CoffeeProvider>
+    <CartProvider>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
-    </CoffeeProvider>
+    </CartProvider>
   )
 }

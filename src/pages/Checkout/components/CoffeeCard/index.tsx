@@ -2,15 +2,14 @@ import { Minus, Plus, Trash } from 'phosphor-react'
 
 import * as S from './styles'
 import { priceFormatter } from '@/utils/formater'
+import { CartCoffee } from '@/context/cartContext'
 
 interface CoffeeCardProps {
-  id: number
-  name: string
-  photo: string
-  price: number
+  coffee: CartCoffee
 }
 
-export function CoffeeCard({ id, name, photo, price }: CoffeeCardProps) {
+export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const { name, photo, price, quantity } = coffee
   return (
     <>
       <S.CoffeeContainer>
@@ -23,7 +22,7 @@ export function CoffeeCard({ id, name, photo, price }: CoffeeCardProps) {
               <S.Button>
                 <Minus size={14} />
               </S.Button>
-              <S.CoffeeQuantity>1</S.CoffeeQuantity>
+              <S.CoffeeQuantity>{quantity}</S.CoffeeQuantity>
               <S.Button>
                 <Plus size={14} />
               </S.Button>
@@ -37,7 +36,9 @@ export function CoffeeCard({ id, name, photo, price }: CoffeeCardProps) {
         </div>
 
         <S.PriceContainer>
-          <S.CoffeePrice>{priceFormatter.format(price)}</S.CoffeePrice>
+          <S.CoffeePrice>
+            {priceFormatter.format(price * quantity)}
+          </S.CoffeePrice>
         </S.PriceContainer>
       </S.CoffeeContainer>
       <S.Divider />

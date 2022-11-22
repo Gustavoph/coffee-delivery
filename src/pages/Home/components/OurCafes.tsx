@@ -8,14 +8,7 @@ export function OurCafes() {
 
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-10 gap-x-8">
         {coffees.map((coffee) => (
-          <CoffeeCard
-            key={coffee.id}
-            tags={coffee.tags}
-            name={coffee.name}
-            price={coffee.price}
-            photo={coffee.photo}
-            description={coffee.description}
-          />
+          <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </div>
     </section>
