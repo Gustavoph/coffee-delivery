@@ -1,15 +1,9 @@
 import { TextInput } from '@/components'
-import {
-  CurrencyDollarSimple,
-  Money,
-  Bank,
-  MapPinLine,
-  Minus,
-  Plus,
-  Trash,
-} from 'phosphor-react'
+import { CurrencyDollarSimple, Money, Bank, MapPinLine } from 'phosphor-react'
 import { useNavigate } from 'react-router-dom'
+import { CoffeeCard } from './components/CoffeeCard'
 import { PaymentCard } from './components/PaymentCard'
+import { coffees } from '@/data/coffees'
 
 export function Checkout() {
   const navigate = useNavigate()
@@ -91,41 +85,14 @@ export function Checkout() {
         </h1>
 
         <div className="flex flex-col p-10 bg-base-card rounded w-full min-w-[448px] rounded-tr-[44px] rounded-bl-[44px]">
-          <div className="flex px-1 py-2">
-            <img
-              alt=""
-              src="/coffees/americano.svg"
-              className="w-16 h-16 mr-5"
-            />
+          <CoffeeCard
+            id={coffees[0].id}
+            name={coffees[0].name}
+            photo={coffees[0].photo}
+            price={coffees[0].price}
+          />
 
-            <div className="mr-10 space-y-2">
-              <p>Expresso Tradicional</p>
-              <div className="flex gap-x-2">
-                <div className="flex h-[32px] items-center rounded px-2 py-3 bg-base-button gap-2">
-                  <button>
-                    <Minus size={14} className="text-purple" />
-                  </button>
-                  <span className="text-text-m text-base-title">1</span>
-                  <button>
-                    <Plus size={14} className="text-purple " />
-                  </button>
-                </div>
-
-                <button className="flex h-[32px] gap-x-1 px-2 items-center bg-base-button rounded">
-                  <Trash size={14} className="text-purple" />
-                  <span className="text-[12px] text-base-text">Remover</span>
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <p className="text-base-text text-text-m font-bold">R$ 9,90</p>
-            </div>
-          </div>
-
-          <hr className="text-base-button mt-6" />
-
-          <div className="flex flex-col gap-y-3 my-6">
+          <div className="flex flex-col gap-y-3 mb-6">
             <p className="text-base-text flex text-text-s">
               <span className="block flex-1">Total de itens</span>
               <span className="block text-text-m">R$ 29,70</span>
