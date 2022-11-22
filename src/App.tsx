@@ -1,12 +1,15 @@
 import { BrowserRouter } from 'react-router-dom'
+import { CoffeeProvider } from './context/coffee'
 
 import { Router } from './routes'
 import './styles/global.css'
 
 export function App() {
   return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <CoffeeProvider>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </CoffeeProvider>
   )
 }

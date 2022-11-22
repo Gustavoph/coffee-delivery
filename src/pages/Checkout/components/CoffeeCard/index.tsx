@@ -36,7 +36,9 @@ export function CoffeeCard({ id, name, photo, price }: CoffeeCardProps) {
           </div>
         </div>
 
-        <S.CoffeePrice>{priceFormatter.format(price)}</S.CoffeePrice>
+        <S.PriceContainer>
+          <S.CoffeePrice>{priceFormatter.format(price)}</S.CoffeePrice>
+        </S.PriceContainer>
       </S.CoffeeContainer>
       <S.Divider />
     </>

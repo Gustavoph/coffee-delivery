@@ -18,6 +18,8 @@ export const CoffeeName = w.p('text-text-m text-base-subtitle')
 
 export const CoffeePrice = w.p('text-base-text text-text-m font-bold')
 
+export const PriceContainer = w.div('w-full flex justify-end')
+
 export const ButtonRemove = w.button(
   'flex h-[32px] gap-x-1 px-2 items-center bg-base-button rounded text-[12px] text-base-text',
 )
