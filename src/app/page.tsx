@@ -1,6 +1,7 @@
 import { Input } from '@/components/Form/Input'
 import { Button } from '@/components/ui/Button'
 import { IconButton } from '@/components/ui/IconButton'
+import { Indicator } from '@/components/ui/Indicator'
 import { ShoppingCartSimple } from '@/components/ui/icons'
 
 export default function Home() {
@@ -12,9 +13,11 @@ export default function Home() {
 
       <Button>Teste</Button>
 
-      <IconButton>
-        <ShoppingCartSimple weight="fill" />
-      </IconButton>
+      <Indicator label={0}>
+        <IconButton>
+          <ShoppingCartSimple weight="fill" />
+        </IconButton>
+      </Indicator>
     </main>
   )
 }
