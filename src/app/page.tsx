@@ -1,4 +1,5 @@
 import { Input } from '@/components/Form/Input'
+import { Button } from '@/components/ui/Button'
 
 export default function Home() {
   return (
@@ -6,6 +7,8 @@ export default function Home() {
       <div className="font-roboto">Hello World</div>
 
       <Input placeholder="Label" optional />
+
+      <Button>Teste</Button>
     </main>
   )
 }
