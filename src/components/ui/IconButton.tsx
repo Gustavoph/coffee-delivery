@@ -12,7 +12,7 @@ interface IconButtonProps extends ComponentProps<'button'>, PropsWithChildren {
 }
 
 const IconButtonVariants = w.button(
-  'transition duration-75 w-[38px] h-[38px] rounded-md cursor-pointer flex items-center justify-centerss',
+  'transition duration-75 w-[38px] h-[38px] rounded-md cursor-pointer flex items-center justify-center',
   {
     variants: {
       color: {
