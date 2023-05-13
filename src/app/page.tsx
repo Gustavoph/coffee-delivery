@@ -1,6 +1,7 @@
 import { Counter } from '@/components/Counter'
 import { Input } from '@/components/Form/Input'
 import { PaymentSelect } from '@/components/PaymentSelect'
+import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { IconButton } from '@/components/ui/IconButton'
 import { Indicator } from '@/components/ui/Indicator'
@@ -33,6 +34,8 @@ export default function Home() {
       />
 
       <Counter />
+
+      <Badge label="Tradicional" className="w-20" />
     </main>
   )
 }
