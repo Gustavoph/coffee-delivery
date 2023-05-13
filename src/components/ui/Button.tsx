@@ -23,7 +23,7 @@ const ButtonVariants = w.button(
   },
 )
 
-const ButtonText = w.p('uppercase font-roboto', {
+const ButtonText = w.p('flex gap-1 uppercase font-roboto', {
   variants: {
     size: {
       base: 'font-bold text-sm text-white',

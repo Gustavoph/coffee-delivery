@@ -9,7 +9,7 @@ export function Counter({ className, ...rest }: CounterProps) {
   return (
     <div
       className={tw(
-        'flex items-center gap-2 justify-center w-[72px] h-8 bg-base-button rounded-md',
+        'flex items-center gap-2 justify-center min-w-[72px] max-w-[72px] h-8 bg-base-button rounded-md',
         className,
       )}
       {...rest}

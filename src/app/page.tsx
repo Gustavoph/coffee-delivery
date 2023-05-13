@@ -11,6 +11,7 @@ import { Title } from '@/components/ui/Title'
 import { CreditCard, ShoppingCartSimple } from '@/components/ui/icons'
 
 import logo from '@/assets/express.png'
+import { CartCoffeeCard } from '@/components/CartCoffeeCard'
 
 export default function Home() {
   return (
@@ -41,6 +42,17 @@ export default function Home() {
       <Badge label="Tradicional" className="w-20" />
 
       <CatalogCoffeeCard
+        coffee={{
+          id: '1',
+          name: 'Expresso Tradicional',
+          description:
+            'O tradicional café feito com água quente e grãos moídos',
+          amount: 9.9,
+          imageUrl: logo.src,
+        }}
+      />
+
+      <CartCoffeeCard
         coffee={{
           id: '1',
           name: 'Expresso Tradicional',
