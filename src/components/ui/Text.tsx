@@ -12,6 +12,7 @@ export const Text = w.p('font-roboto', {
       sm: 'text-sm',
       base: 'text-base',
       xl: 'text-xl',
+      '2xl': 'text-2xl',
     },
 
     weight: {

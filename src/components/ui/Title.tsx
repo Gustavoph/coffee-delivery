@@ -7,7 +7,7 @@ export const Title = w.h2('font-baloo2 font-bold', {
       subtitle: 'text-base-subtitle',
     },
 
-    sizes: {
+    size: {
       '5xl': 'text-5xl',
       xl: 'text-xl',
       xs: 'text-lg',
@@ -16,6 +16,6 @@ export const Title = w.h2('font-baloo2 font-bold', {
 
   defaultVariants: {
     variant: 'base',
-    sizes: '5xl',
+    size: '5xl',
   },
 })

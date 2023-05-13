@@ -1,3 +1,4 @@
+import { CatalogCoffeeCard } from '@/components/CatalogCoffeeCard'
 import { Counter } from '@/components/Counter'
 import { Input } from '@/components/Form/Input'
 import { PaymentSelect } from '@/components/PaymentSelect'
@@ -8,6 +9,8 @@ import { Indicator } from '@/components/ui/Indicator'
 import { Text } from '@/components/ui/Text'
 import { Title } from '@/components/ui/Title'
 import { CreditCard, ShoppingCartSimple } from '@/components/ui/icons'
+
+import logo from '@/assets/express.png'
 
 export default function Home() {
   return (
@@ -36,6 +39,17 @@ export default function Home() {
       <Counter />
 
       <Badge label="Tradicional" className="w-20" />
+
+      <CatalogCoffeeCard
+        coffee={{
+          id: '1',
+          name: 'Expresso Tradicional',
+          description:
+            'O tradicional café feito com água quente e grãos moídos',
+          amount: 9.9,
+          imageUrl: logo.src,
+        }}
+      />
     </main>
   )
 }
