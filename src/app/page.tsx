@@ -1,10 +1,11 @@
 import { Input } from '@/components/Form/Input'
+import { PaymentSelect } from '@/components/PaymentSelect'
 import { Button } from '@/components/ui/Button'
 import { IconButton } from '@/components/ui/IconButton'
 import { Indicator } from '@/components/ui/Indicator'
 import { Text } from '@/components/ui/Text'
 import { Title } from '@/components/ui/Title'
-import { ShoppingCartSimple } from '@/components/ui/icons'
+import { CreditCard, ShoppingCartSimple } from '@/components/ui/icons'
 
 export default function Home() {
   return (
@@ -23,6 +24,12 @@ export default function Home() {
 
       <Text variant="label">Gustavo Oliveira</Text>
       <Title>Testando</Title>
+
+      <PaymentSelect
+        icon={<CreditCard />}
+        isSelected
+        text="Cartão de crédito"
+      />
     </main>
   )
 }

@@ -3,8 +3,15 @@ import { w } from 'windstitch'
 export const Text = w.p('font-roboto', {
   variants: {
     variant: {
-      base: 'text-base text-base-text',
-      label: 'text-sm text-base-label',
+      base: 'text-base-text',
+      label: 'text-base-label',
+    },
+
+    size: {
+      xs: 'text-xs',
+      sm: 'text-sm',
+      base: 'text-base',
+      xl: 'text-xl',
     },
 
     weight: {
@@ -16,5 +23,6 @@ export const Text = w.p('font-roboto', {
   defaultVariants: {
     variant: 'base',
     weight: 'normal',
+    size: 'base',
   },
 })
