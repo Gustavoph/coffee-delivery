@@ -2,6 +2,7 @@ import { Input } from '@/components/Form/Input'
 import { Button } from '@/components/ui/Button'
 import { IconButton } from '@/components/ui/IconButton'
 import { Indicator } from '@/components/ui/Indicator'
+import { Text } from '@/components/ui/Text'
 import { ShoppingCartSimple } from '@/components/ui/icons'
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
           <ShoppingCartSimple weight="fill" />
         </IconButton>
       </Indicator>
+
+      <Text variant="label">Gustavo Oliveira</Text>
     </main>
   )
 }
