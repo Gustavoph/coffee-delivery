@@ -1,3 +1,4 @@
+import { Counter } from '@/components/Counter'
 import { Input } from '@/components/Form/Input'
 import { PaymentSelect } from '@/components/PaymentSelect'
 import { Button } from '@/components/ui/Button'
@@ -30,6 +31,8 @@ export default function Home() {
         isSelected
         text="Cartão de crédito"
       />
+
+      <Counter />
     </main>
   )
 }
