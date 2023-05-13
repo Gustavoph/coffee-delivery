@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { IconButton } from '@/components/ui/IconButton'
 import { Indicator } from '@/components/ui/Indicator'
 import { Text } from '@/components/ui/Text'
+import { Title } from '@/components/ui/Title'
 import { ShoppingCartSimple } from '@/components/ui/icons'
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       </Indicator>
 
       <Text variant="label">Gustavo Oliveira</Text>
+      <Title>Testando</Title>
     </main>
   )
 }
