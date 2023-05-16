@@ -16,7 +16,7 @@ const IconButtonVariants = w.button(
   {
     variants: {
       color: {
-        yellow: 'bg-base-button',
+        yellow: 'bg-yellow-light',
         purple: 'bg-purple-dark hover:bg-purple-base',
       },
     },
@@ -37,7 +37,7 @@ export function IconButton({
   return (
     <IconButtonVariants color={color} className={twMerge(className)} {...rest}>
       <Slot
-        className={clsx(`w-[22px] h-[22px]`, {
+        className={clsx(`h-[22px] w-[22px]`, {
           'text-white': color === 'purple',
           'text-yellow-dark': color === 'yellow',
         })}
