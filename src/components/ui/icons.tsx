@@ -8,7 +8,7 @@ export function LoadingIcon({ className, ...rest }: IconProps) {
     <CircleNotch
       size={32}
       weight="bold"
-      className={tw('animate-spin text-purple-01', className)}
+      className={tw('text-purple-01 animate-spin', className)}
       {...rest}
     />
   )

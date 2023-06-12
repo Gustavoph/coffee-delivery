@@ -15,7 +15,7 @@ interface CartCoffeeCardProps {
 export function CartCoffeeCard({ coffee }: CartCoffeeCardProps) {
   return (
     <div
-      className={tw('h-20 w-[368px] flex items-center bg-base-card px-1 py-2')}
+      className={tw('flex h-20 w-[368px] items-center bg-base-card px-1 py-2')}
     >
       <Image alt={coffee.name} src={coffee.imageUrl} width={64} height={64} />
 
@@ -28,7 +28,7 @@ export function CartCoffeeCard({ coffee }: CartCoffeeCardProps) {
           <Counter />
 
           <Button size="small" className="min-w-[91px]">
-            <Trash className="text-purple-base w-4 h-4" />
+            <Trash className="h-4 w-4 text-purple-base" />
             Remover
           </Button>
         </div>

@@ -30,7 +30,9 @@ export const metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.variable} ${baloo2.variable} box-border`}>
+      <body
+        className={`${roboto.variable} ${baloo2.variable} box-border overflow-x-hidden`}
+      >
         <header className="w-screen py-8">
           <div className="mx-auto flex max-w-6xl items-center justify-between">
             <Image
@@ -40,7 +42,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
               alt="Logo Coffe Delivery"
             />
 
-            <div className="flex items-center justify-center gap-3">
+            <nav className="flex items-center justify-center gap-3">
               <div className="flex items-center justify-between gap-2 rounded-md bg-purple-light p-2">
                 <MapPin
                   className="text-purple-base"
@@ -56,13 +58,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
               <IconButton color="yellow">
                 <ShoppingCart weight="fill" />
               </IconButton>
-            </div>
+            </nav>
           </div>
         </header>
 
-        <main className="w-screen ">
-          <div className="mx-auto max-w-6xl">{children}</div>
-        </main>
+        <main className="mx-auto w-screen max-w-6xl">{children}</main>
       </body>
     </html>
   )

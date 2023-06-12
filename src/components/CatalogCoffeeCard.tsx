@@ -15,7 +15,7 @@ interface CatalogCoffeeCardProps {
 
 export function CatalogCoffeeCard({ coffee }: CatalogCoffeeCardProps) {
   return (
-    <div className="flex items-center flex-col bg-base-card w-64 h-[310px] rounded-md rounded-tr-[36px] rounded-bl-[36px] px-5 py-6">
+    <div className="flex h-[310px] w-64 flex-col items-center rounded-md rounded-bl-[36px] rounded-tr-[36px] bg-base-card px-5 py-6">
       <Image
         alt="coffee"
         width={120}
@@ -25,7 +25,7 @@ export function CatalogCoffeeCard({ coffee }: CatalogCoffeeCardProps) {
         src={coffee.imageUrl}
       />
 
-      <Badge label="Tradicional" className="mt-3 mb-4" />
+      <Badge label="Tradicional" className="mb-4 mt-3" />
 
       <Title size="xl" variant="subtitle">
         {coffee.name}
@@ -35,9 +35,9 @@ export function CatalogCoffeeCard({ coffee }: CatalogCoffeeCardProps) {
         {coffee.description}
       </Text>
 
-      <div className="flex items-center mt-8 justify-between w-full">
+      <div className="mt-8 flex w-full items-center justify-between">
         <Text size="2xl" weight="bold">
-          <span className="font-normal text-sm pr-1">R$</span>
+          <span className="pr-1 text-sm font-normal">R$</span>
           <span className="font-baloo2">{formatCurrency(coffee.amount)}</span>
         </Text>
 

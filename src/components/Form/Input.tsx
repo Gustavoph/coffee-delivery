@@ -10,18 +10,18 @@ export function InputComponent(
   ref: any,
 ) {
   return (
-    <div className="flex items-center gap-3 w-full h-[42px] p-3 border bg-base-input rounded-[4px] border-base-button focus-within:border-yellow-dark">
+    <div className="flex h-[42px] w-full items-center gap-3 rounded-[4px] border border-base-button bg-base-input p-3 focus-within:border-yellow-dark">
       <input
         ref={ref}
         className={twMerge(
-          `bg-transparent flex-1 text-sm outline-none text-base-text font-roboto placeholder:text-base-label`,
+          `flex-1 bg-transparent font-roboto text-sm text-base-text outline-none placeholder:text-base-label`,
           className,
         )}
         {...rest}
       />
 
       {optional && (
-        <span className="text-xs font-roboto text-base-label italic">
+        <span className="font-roboto text-xs italic text-base-label">
           Optional
         </span>
       )}

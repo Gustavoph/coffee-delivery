@@ -9,12 +9,12 @@ export function Badge({ label, className, ...rest }: BadgeProps) {
   return (
     <div
       className={tw(
-        'bg-yellow-light flex items-center justify-center rounded-full h-[21px] px-2 py-1',
+        'flex h-[21px] items-center justify-center rounded-full bg-yellow-light px-2 py-1',
         className,
       )}
       {...rest}
     >
-      <p className="uppercase text-yellow-dark font-bold font-roboto text-[10px]">
+      <p className="font-roboto text-[10px] font-bold uppercase text-yellow-dark">
         {label}
       </p>
     </div>
